@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">misdatos</string>
+    <string name="boton1">MIS DATOS</string>
+    <string name="boton3">MIS DATOS2</string>
+    <string name="campo1">Nombre</string>
+    <string name="campo2">email</string>
+    <string name="campo3">telefono</string>
+    <string name="boton2">GUARDAR</string>
+
+</resources>
