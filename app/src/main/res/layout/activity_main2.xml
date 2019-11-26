@@ -13,38 +13,65 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:text="@string/campo1"
+            android:autofillHints=""
+            tools:targetApi="o"
+            />
+
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/nombre2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/campo1"
             android:inputType="textPersonName"
-            tools:targetApi="o"/>
+            tools:targetApi="o"
+            tools:text="@string/campo1" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:text="@string/campo1" />
-
-        <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:text="@string/campo2" />
 
+        <EditText
+            android:id="@+id/correo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/campo1"
+            android:inputType="textPersonName"
+            tools:targetApi="o"
+            tools:text="@string/campo2" />
+
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/telefono"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/campo3" />
+
+        <EditText
+            android:id="@+id/telefono2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/campo1"
+            android:inputType="textPersonName"
+            tools:targetApi="o"
+            tools:text="@string/campo2" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="guardarDatos"
             android:text="@string/boton2" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
