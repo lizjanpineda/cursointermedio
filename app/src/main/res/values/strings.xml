@@ -6,6 +6,14 @@
     <string name="campo2">email nuevo</string>
     <string name="campo3">telefono</string>
     <string name="boton2">GUARDAR</string>
+
+    <string name="campohome">cuadro de texto home</string>
+    <string name="botonhome1">botonhome1</string>
+    <string name="botonhome2">botonhome2</string>
+
+
+
+
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
