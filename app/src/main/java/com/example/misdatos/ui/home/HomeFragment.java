@@ -1,6 +1,7 @@
 package com.example.misdatos.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,14 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.misdatos.R;
+import com.example.misdatos.Utils.Globals;
+import com.example.misdatos.Utils.ReporteService;
 import com.example.misdatos.models.Empleado;
 import com.google.gson.Gson;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
@@ -23,6 +30,8 @@ public class HomeFragment extends Fragment {
 
     private Gson gson;
     private TextView txtRes;
+
+    private ReporteService service;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -49,7 +58,7 @@ public class HomeFragment extends Fragment {
         toJsonBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                claseJson(EmpleadoObjeto);
+                claseAJson(EmpleadoObjeto);
 
             }
         });
@@ -63,12 +72,56 @@ Button fromJsonBtn = root.findViewById(R.id.bhome2);
         }
     });
 
+        service= Globals.getApi().create(ReporteService.class);
+
+        Button llamaruno=root.findViewById(R.id.llamadauno);
+        llamaruno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("llamada","click en boton");
+                getEmpleado(5);
+
+
+            }
+        });
+
+
+        Button llamartodos=root.findViewById(R.id.llamadatodos);
+        llamartodos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getEmpleado(5);
+
+            }
+        });
+
         return root;
     }
 
+    private Call<Empleado> getEmpleadoCall;
 
+    private void getEmpleado(int id){
+        getEmpleadoCall=service.getEmpleadoUnico(id);
+        getEmpleadoCall.enqueue(new Callback<Empleado>() {
+            @Override
+            public void onResponse(Call<Empleado> call, Response<Empleado> response) {
+                Log.i("llamada",response.toString());
+                if(response.isSuccessful()){
+                    Empleado empresult=response.body();
+                    claseAJson(empresult);
+                }
 
-    private void claseJson(Empleado empleado){
+            }
+
+            @Override
+            public void onFailure(Call<Empleado> call, Throwable t) {
+                Log.i("error llamada",t.getMessage());
+            }
+        });
+
+    }
+
+    private void claseAJson(Empleado empleado){
         String resultado= gson.toJson(empleado);
         txtRes.setText(resultado);
 

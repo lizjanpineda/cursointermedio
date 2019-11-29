@@ -38,6 +38,18 @@
             android:text=""
             android:textAlignment="center"
             android:textSize="0sp" />
+
+        <Button
+            android:id="@+id/llamadauno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/llamauno" />
+
+        <Button
+            android:id="@+id/llamadatodos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/llamatodos" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
