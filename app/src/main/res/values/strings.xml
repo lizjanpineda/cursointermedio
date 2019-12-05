@@ -8,6 +8,8 @@
     <string name="campo4">fecha</string>
     <string name="campo5">REPORTE DE HECHOS</string>
     <string name="campo6">localizacion</string>
+    <string name="campo7">USUARIO</string>
+    <string name="campo8">CONTRASEÑA</string>
     <string name="boton2">GUARDAR</string>
 
     <string name="campohome">cuadro de texto home</string>
@@ -15,6 +17,7 @@
     <string name="botonhome2">botonhome2</string>
     <string name="llamauno">pide uno</string>
     <string name="llamatodos">pide todos</string>
+    <string name="inicio">INICIAR SESION</string>
 
 
     <string name="title_activity_main">MainActivity</string>

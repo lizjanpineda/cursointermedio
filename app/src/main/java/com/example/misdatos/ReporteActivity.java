@@ -80,9 +80,9 @@ public class ReporteActivity extends AppCompatActivity {
 
             });
 
-                getPermisos();
 
                 provider =new FusedLocationProviderClient(this);
+                getPermisos();
 
         
 

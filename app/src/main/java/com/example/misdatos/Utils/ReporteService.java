@@ -2,6 +2,7 @@ package com.example.misdatos.Utils;
 
 import com.example.misdatos.models.CallResult;
 import com.example.misdatos.models.Empleado;
+import com.example.misdatos.models.LoginResult;
 
 import java.util.List;
 
@@ -28,4 +29,11 @@ public interface ReporteService {
                                     @Field("email") String email,
                                     @Field("telefono") String telefono,
                                     @Field("reporte") String reporte);
+
+    @FormUrlEncoded
+    @POST("Login.php")
+    Call<LoginResult> LoginResult (@Field("username") String nombre,
+                                   @Field("password") String contrasena);
+
+
 }
